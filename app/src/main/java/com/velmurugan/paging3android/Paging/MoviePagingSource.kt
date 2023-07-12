@@ -15,7 +15,8 @@ class MoviePagingSource  (private val apiService: RetrofitService): PagingSource
         return try {
             val position = params.key ?: 1
             val response = apiService.getTopRatedMovies(API_KEY,"en-US",position)
-            LoadResult.Page(data = response.body()!!.results, prevKey = if (position == 1) null else position - 1,
+            LoadResult.Page(data = response.body()!!.results,
+                prevKey = if (position == 1) null else position - 1,
                 nextKey = position + 1)
         } catch (e: Exception) {
             LoadResult.Error(e)

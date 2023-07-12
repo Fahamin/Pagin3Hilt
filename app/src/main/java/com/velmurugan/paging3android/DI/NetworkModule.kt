@@ -8,6 +8,7 @@ import dagger.hilt.components.SingletonComponent
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -19,6 +20,7 @@ class NetworkModule {
     fun providesRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://api.themoviedb.org/3/")
+            .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

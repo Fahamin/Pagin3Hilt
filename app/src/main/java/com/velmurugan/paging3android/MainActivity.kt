@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
         lifecycleScope.launch {
             viewModel.getMovieList().observe(this@MainActivity) {
                 it?.let {
@@ -62,7 +61,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
 
     }
 

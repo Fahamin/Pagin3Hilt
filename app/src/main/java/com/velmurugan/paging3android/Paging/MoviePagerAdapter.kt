@@ -15,6 +15,8 @@ class MoviePagerAdapter: PagingDataAdapter<Movie, MoviePagerAdapter.MovieViewHol
         val movie = getItem(position)!!
         holder.view.name.text = movie.original_title
         Glide.with(holder.itemView.context).load("https://image.tmdb.org/t/p/w300"+movie.poster_path).into(holder.view.imageview)
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {

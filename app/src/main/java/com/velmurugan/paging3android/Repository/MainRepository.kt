@@ -14,7 +14,6 @@ import javax.inject.Inject
 class MainRepository @Inject constructor(private val retrofitService: RetrofitService) {
 
     fun getAllMovies(): LiveData<PagingData<Movie>> {
-
         return Pager(
             config = PagingConfig(
                 pageSize = NETWORK_PAGE_SIZE,
